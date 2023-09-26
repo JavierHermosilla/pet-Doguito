@@ -5,12 +5,21 @@ import Sobre from './pages/Sobre'
 
 function App() {
 
-  const location = window.location 
+  const location = window.location.pathname
   console.log(location)
+
+  const Router = () => {
+    if(location=== "/"){
+      return <Home/>
+    }else {
+      return <Sobre/>
+    }
+
+  }
+
   return (
     <>
-      <Home/>
-      <Sobre/>
+      <Router/>
     </>
   );
 }
